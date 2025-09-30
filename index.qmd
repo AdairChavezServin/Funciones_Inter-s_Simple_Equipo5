@@ -98,3 +98,6 @@ r1=interesSimple(Va=400, Vf=600, n=18)
 print(r1)
 ```
 
+---
+
+[Link del qmd](index.qmd)
