@@ -1,20 +1,3 @@
----
-title: "Funciones_Equipo5"
-author: "Adair Chávez Servín"
-format: 
-    html: 
-      toc: true
-    pdf: default
----
-
-Primero determinamos cada variable: </br>
-Va = Valor actual </br>
-Vf = Valor futuro </br>
-r = Tasa de interés (del periodo) </br>
-n = Número/Cantidad de periodos </br>
-</br>
-
-```{r}
 interésSimple = function(Va = NULL, Vf = NULL, r = NULL, n = NULL){
   
   # Valor Futuro:
@@ -48,60 +31,34 @@ interésSimple = function(Va = NULL, Vf = NULL, r = NULL, n = NULL){
     return(n)               # Imprime el valor calculado
   }
 }
-```
 
 ---
-
-Sea el valor actual de 400, un valor futuro de 600 y un periodo de 18 meses, calcular la tasa de interés
-
-```{r}
-r1=interésSimple(Va=400, Vf=600, n=18)
-r1
-```
-
----
-
+  
+  
 ```{python}
 def interesSimple(Va=None, Vf=None, r=None, n=None):
-    
-    # Valor Futuro:
-    if Vf is None:
-        Vf = Va * (1 + r * n)
-        print("El Valor futuro es:")
-        return Vf
-    
-    # Valor Actual:
-    elif Va is None:
-        Va = Vf / (1 + r * n)
-        print("El Valor actual es:")
-        return Va
+  
+  # Valor Futuro:
+  if Vf is None:
+  Vf = Va * (1 + r * n)
+print("El Valor futuro es:")
+return Vf
 
-    # Tasa de interés:
-    elif r is None:
-        r = (Vf / Va - 1) / n
-        print("El Valor de la tasa es:")
-        return r
+# Valor Actual:
+elif Va is None:
+  Va = Vf / (1 + r * n)
+print("El Valor actual es:")
+return Va
 
-    # Cantidad de periodos:
-    elif n is None:
-        n = (Vf / Va - 1) / r
-        print("El número de periodos es:")
-        return n
+# Tasa de interés:
+elif r is None:
+  r = (Vf / Va - 1) / n
+print("El Valor de la tasa es:")
+return r
+
+# Cantidad de periodos:
+elif n is None:
+  n = (Vf / Va - 1) / r
+print("El número de periodos es:")
+return n
 ```
-
----
-
-Sea el valor actual de 400, un valor futuro de 600 y un periodo de 18 meses, calcular la tasa de interés
-
-```{python}
-r1=interesSimple(Va=400, Vf=600, n=18)
-print(r1)
-```
-
----
-
-[Link del qmd](index.qmd)
-[Link del R.Script](index.r)
-
-
-
