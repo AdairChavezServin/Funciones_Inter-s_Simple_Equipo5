@@ -59,26 +59,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="Funciones_Equipo5_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Funciones_Equipo5_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="Funciones_Equipo5_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="Funciones_Equipo5_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="Funciones_Equipo5_files/libs/quarto-html/popper.min.js"></script>
-<script src="Funciones_Equipo5_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Funciones_Equipo5_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Funciones_Equipo5_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Funciones_Equipo5_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Funciones_Equipo5_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Funciones_Equipo5_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Funciones_Equipo5_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="InterésSimple_Equipo5_files/libs/clipboard/clipboard.min.js"></script>
+<script src="InterésSimple_Equipo5_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="InterésSimple_Equipo5_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="InterésSimple_Equipo5_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="InterésSimple_Equipo5_files/libs/quarto-html/popper.min.js"></script>
+<script src="InterésSimple_Equipo5_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="InterésSimple_Equipo5_files/libs/quarto-html/anchor.min.js"></script>
+<link href="InterésSimple_Equipo5_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="InterésSimple_Equipo5_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="InterésSimple_Equipo5_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="InterésSimple_Equipo5_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="InterésSimple_Equipo5_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="InterésSimple_Equipo5.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -106,27 +108,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-</section>
-<section id="running-code" class="level2">
-<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+<p>Primero determinamos cada variable: <br> Va = Valor actual <br> Vf = Valor futuro <br> r = Tasa de interés (del periodo) <br> n = Número/Cantidad de periodos <br> <br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>interésSimple <span class="ot">=</span> <span class="cf">function</span>(<span class="at">Va =</span> <span class="cn">NULL</span>, <span class="at">Vf =</span> <span class="cn">NULL</span>, <span class="at">r =</span> <span class="cn">NULL</span>, <span class="at">n =</span> <span class="cn">NULL</span>){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Valor Futuro:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.null</span>(Vf)){      <span class="co"># Especificamos que, en caso de que el Valor futuro del ejercicio </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#dado no exista, el código ejecutará este bloque de código, calculando así dicho valor.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    Vf <span class="ot">=</span> Va<span class="sc">*</span>(<span class="dv">1</span><span class="sc">+</span>(r<span class="sc">*</span>n))   <span class="co"># Fórmula para calcular el Valor Futuro</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(Vf)          <span class="co"># Imprime el valor calculado</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Valor Actual:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(Va)){      <span class="co"># Especificamos que, en caso de que el Valor actual </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#del ejercicio dado no exista, el código ejecutará este bloque de código, calculando </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">#así dicho valor.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    Va <span class="ot">=</span> Vf<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>(r<span class="sc">*</span>n))       <span class="co"># Fórmula para calcular el Valor Actual</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(Va)               <span class="co"># Imprime el valor calculado</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Tasa de interés:</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(r)){      <span class="co"># Especificamos que, en caso de que la Tasa de interés </span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">#del ejercicio dado no exista, el código ejecutará este bloque de código, calculando </span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">#así dicho valor.</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    r <span class="ot">=</span> (((Vf<span class="sc">/</span>Va) <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>n)   <span class="co"># Fórmula para calcular la Tasa de interés</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(r)               <span class="co"># Imprime el valor calculado</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cantidad de periodos:</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(n)){      <span class="co"># Especificamos que, en caso de que la Cantidad de periodos </span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">#del ejercicio dado no exista, el código ejecutará este bloque de código, calculando </span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">#así dicho valor.</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">=</span> (((Vf<span class="sc">/</span>Va) <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>r)   <span class="co"># Fórmula para calcular la Cantidad de periodos</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(n)               <span class="co"># Imprime el valor calculado</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-<p>You can add options to executable code like this</p>
+<hr>
+<p>Sea el valor actual de 400, un valor futuro de 600 y un periodo de 18 meses, calcular la tasa de interés</p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>r1<span class="ot">=</span>interésSimple(<span class="at">Va=</span><span class="dv">400</span>, <span class="at">Vf=</span><span class="dv">600</span>, <span class="at">n=</span><span class="dv">18</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>r1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<pre><code>[1] 0.02777778</code></pre>
 </div>
 </div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
-</section>
+<hr>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> interesSimple(Va<span class="op">=</span><span class="va">None</span>, Vf<span class="op">=</span><span class="va">None</span>, r<span class="op">=</span><span class="va">None</span>, n<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Valor Futuro:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> Vf <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        Vf <span class="op">=</span> Va <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> r <span class="op">*</span> n)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"El Valor futuro es:"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Vf</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Valor Actual:</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> Va <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        Va <span class="op">=</span> Vf <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> r <span class="op">*</span> n)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"El Valor actual es:"</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Va</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tasa de interés:</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> (Vf <span class="op">/</span> Va <span class="op">-</span> <span class="dv">1</span>) <span class="op">/</span> n</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"El Valor de la tasa es:"</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> r</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cantidad de periodos:</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        n <span class="op">=</span> (Vf <span class="op">/</span> Va <span class="op">-</span> <span class="dv">1</span>) <span class="op">/</span> r</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"El número de periodos es:"</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+<p>Sea el valor actual de 400, un valor futuro de 600 y un periodo de 18 meses, calcular la tasa de interés</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>r1<span class="op">=</span>interesSimple(Va<span class="op">=</span><span class="dv">400</span>, Vf<span class="op">=</span><span class="dv">600</span>, n<span class="op">=</span><span class="dv">18</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El Valor de la tasa es:</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.027777777777777776</code></pre>
+</div>
+</div>
 
 </main>
 <!-- /main column -->
