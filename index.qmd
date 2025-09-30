@@ -101,3 +101,5 @@ print(r1)
 ---
 
 [Link del qmd](index.qmd)
+Link del R.Script
+
